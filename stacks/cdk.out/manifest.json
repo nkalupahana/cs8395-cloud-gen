@@ -1,0 +1,147 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "MyCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MyCdkStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/MyCdkStack/MyTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "MyTable794EDED1"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/construct-compat.ts:453:92)",
+              "new Table (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:1210:38)",
+              "new MyCdkStack (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:8:21)",
+              "Object.<anonymous> (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:20:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Module.m._compile (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "phase4 (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyCdkStack/MyTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyTable794EDED1",
+            "trace": [
+              "new Table (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:1180:18)",
+              "new MyCdkStack (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:8:21)",
+              "Object.<anonymous> (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:20:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Module.m._compile (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "phase4 (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "Object.<anonymous> (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:21:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Module.m._compile (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "phase4 (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/nisala/Projects/genai/infra-setup/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "Object.<anonymous> (/Users/nisala/Projects/genai/infra-setup/stacks/basic-dynamo-0.ts:21:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Module.m._compile (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "phase4 (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/nisala/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1241:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1295:10)",
+              "Module.load (node:internal/modules/cjs/loader:1091:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:938:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ]
+      },
+      "displayName": "MyCdkStack"
+    }
+  }
+}

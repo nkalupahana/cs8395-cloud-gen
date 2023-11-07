@@ -1,0 +1,1 @@
+- DynamoDB resource named myTable

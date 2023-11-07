@@ -1,0 +1,2 @@
+- Simple Queue Service (SQS)
+- Queue named MyQueueName

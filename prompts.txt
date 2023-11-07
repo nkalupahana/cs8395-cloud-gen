@@ -1,0 +1,38 @@
+Identify the AWS resources that are being used in the following code. Be sure to include the name of the resource.
+
+Code:
+```
+import boto3
+
+s3 = boto3.client('s3')
+s3.download_file('mybucket', 'hello.txt', 'hello.txt')
+```
+
+Output:
+```
+- S3 bucket named mybucket
+```
+
+Code:
+```
+${CODE}
+```
+
+Output:
+
+
+------------------
+
+Create an AWS CDK Stack class that creates the following resources:
+${OUTPUT}
+
+------------------
+
+Take the following infrastructure description and rewrite it, following this format. 
+Description: This is an AWS Lambda function named test_function, triggered by HTTP.
+Rewrite: Create an AWS CDK Stack class that  creates an AWS Lambda function named test_function. Make the lambda triggered by HTTP requests.
+Description: This is an AWS Lambda function named wahoo, SQS trigger for "hello" queue.
+Rewrite:
+
+---------------
+
