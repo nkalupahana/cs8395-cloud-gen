@@ -1,6 +1,0 @@
-- S3 bucket named my-bucket
-- S3.create_bucket
-- S3.upload_file
-- S3.list_objects
-- S3.download_file
-- S3.delete_object

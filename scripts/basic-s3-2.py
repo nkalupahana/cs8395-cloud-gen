@@ -3,9 +3,6 @@ import boto3
 # Create an S3 client
 s3 = boto3.client('s3')
 
-# Create a bucket
-s3.create_bucket(Bucket='my-bucket')
-
 # Upload a file
 s3.upload_file(Filename='/path/to/myfile.txt', Bucket='my-bucket', Key='myfile.txt')
 

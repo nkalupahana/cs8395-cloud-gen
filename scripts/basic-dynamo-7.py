@@ -5,28 +5,7 @@ import boto3
 dynamodb = boto3.resource('dynamodb')
 
 # Create table
-table = dynamodb.create_table(
-    TableName='MyTable',
-    KeySchema=[
-        {
-            'AttributeName': 'my_key',
-            'KeyType': 'HASH'
-        }
-    ],
-    AttributeDefinitions=[
-        {
-            'AttributeName': 'my_key',
-            'AttributeType': 'S'
-        }
-    ],
-    ProvisionedThroughput={
-        'ReadCapacityUnits': 5,
-        'WriteCapacityUnits': 5
-    }
-)
-
-# Wait until table exists
-table.meta.client.get_waiter('table_exists').wait(TableName='MyTable')
+table = dynamodb.Table("MyTable")
 
 # Put items on table
 table.put_item(
@@ -55,6 +34,3 @@ table.update_item(
         ':val1': 'some new data'
     }
 )
-
-# Delete table
-table.delete()

@@ -3,13 +3,7 @@ import boto3
 # Create an SQS client
 sqs = boto3.client('sqs')
 
-# Create a queue
-response = sqs.create_queue(
-    QueueName='MyQueueName'
-)
-
-# Get the queue URL
-queue_url = response['QueueUrl']
+queue_url = sqs.get_queue_url(QueueName='MyQueueName')
 
 # Send a message
 response = sqs.send_message(

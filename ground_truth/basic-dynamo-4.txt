@@ -1,0 +1,1 @@
+table my_dynamo_table

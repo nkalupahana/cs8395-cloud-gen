@@ -11,9 +11,6 @@ response = s3.list_buckets()
 for bucket in response['Buckets']:
     print(bucket['Name'])
 
-# Create a new bucket
-s3.create_bucket(Bucket='my-new-bucket')
-
 # Upload a file to the new bucket
 s3.upload_file('/path/to/my/file.txt', 'my-new-bucket', 'file.txt')
 

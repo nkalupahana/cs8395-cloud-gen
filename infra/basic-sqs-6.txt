@@ -1,2 +1,0 @@
-- Simple Queue Service (SQS)
-- MyQueue queue

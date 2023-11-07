@@ -1,1 +1,0 @@
-- SQS queue named my-sqs-queue.amazon.com

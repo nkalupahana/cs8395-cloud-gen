@@ -7,28 +7,30 @@ import itertools
 import json
 import os.path
 import sys
+from tqdm import tqdm
 
 llm = OpenAI(max_tokens=2048)
-# Test generation prompt
-stack_prompt = PromptTemplate.from_template("""Create an AWS CDK Stack class in TypeScript named CdkStack that creates the following resources:
-{code}
 
+stack_prompt = PromptTemplate.from_template("""Create an AWS CDK Stack class in TypeScript named CdkStack that creates an AWS Lambda function named test_function. The file to be deployed for the Lambda is a local file called test.zip. Additionally, create the following resources:
+{resources}
+Ensure that the Lambda function has access to the resources by importing and using IAM.
 ```""")
 
-for function in itertools.chain(glob.glob("infra/*.txt")):
+for function in tqdm(itertools.chain(glob.glob("infra/*.txt"))):
     if "__init__" in function:
         continue
 
     filename = function.replace("infra/", "").replace(".txt", "")
-    if os.path.isfile(f"stacks/{filename}.ts"):
-        print(f"Skipping {filename}, test already exists.")
-        continue
 
     # Get code and create prompt
-    print(f"Generating stack for {function}.")
     with open(function) as f:
         code = f.read()
-    code_prompt = stack_prompt.format(code=code)
+
+    if os.path.isfile(f"lambda_stacks/{filename}.ts"):
+        print(f"Skipping {filename}, test already exists.")
+        continue
+    
+    code_prompt = stack_prompt.format(resources=code)
     
     # Generate tests and clean up output
     output = llm.predict(code_prompt)
@@ -36,5 +38,5 @@ for function in itertools.chain(glob.glob("infra/*.txt")):
     output += "\n\nimport * as NOCONFLICT_CDK from '@aws-cdk/core';\nconst app = new NOCONFLICT_CDK.App(); new CdkStack(app, 'CdkStack'); app.synth();"
 
     # Write out final code
-    with open(f"stacks/{filename}.ts", "w") as f:
+    with open(f"lambda_stacks/{filename}.ts", "w") as f:
         f.write(output)

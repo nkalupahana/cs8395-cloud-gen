@@ -1,7 +1,0 @@
-- S3 bucket named my-bucket 
-- S3 client 
-- S3 upload_file 
-- S3 download_file 
-- S3 list_objects 
-- S3 get_object 
-- S3 delete_object
