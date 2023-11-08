@@ -2,6 +2,6 @@
     "name": "infra",
     "model": "openai-latest-1024",
     "run_test": "python3 generate_findinfra.py --model openai-latest-1024 && python3 generate_stacks.py --model openai-latest-1024 && python3 generate_lambda_stacks.py",
-    "run_score": "python3 grade.py",
+    "run_score": "npm install && python3 grade.py",
     "tags": ["python", "javascript", "typescript", "cloud", "iac"]
 }
