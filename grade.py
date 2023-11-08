@@ -162,7 +162,7 @@ for stack_root in ["lambda_stacks"]:
 
 with open("output.json", "w") as f:
     end = {
-        "overall": main_worked / main_total,
+        "output": main_worked / main_total,
         "results": saved_results,
         "resources": saved_resources
     }
