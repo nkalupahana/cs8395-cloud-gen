@@ -1,0 +1,2 @@
+- S3 bucket named source-bucket 
+- S3 bucket named destination-bucket

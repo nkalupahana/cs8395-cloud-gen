@@ -1,0 +1,2 @@
+- DynamoDB Table named myTable
+- S3 bucket named my-bucket

@@ -1,0 +1,2 @@
+- S3 bucket named my-bucket-name
+- SQS queue named my-sqs-queue in the region my-region

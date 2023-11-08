@@ -1,0 +1,4 @@
+- S3 bucket named my-bucket
+- DynamoDB table named my_table
+- SQS Queue named MyQueue
+``

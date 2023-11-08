@@ -1,0 +1,1 @@
+- DynamoDB Table named my_dynamodb_table

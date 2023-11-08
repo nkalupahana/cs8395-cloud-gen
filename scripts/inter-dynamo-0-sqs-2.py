@@ -19,24 +19,30 @@ response = table.get_item(
 )
 item = response['Item']
 print(item)
-import boto3 
+import boto3
 
-# Access a DynamoDB table
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('MyTable')
+# Create an SQS client
+sqs = boto3.client('sqs')
 
-# Perform read/write operations on the table
-table.put_item(
-    Item={
-        'my_key': 'my_value',
-        'another_key': 'another_value'
-    }
+queue_url = sqs.get_queue_url(QueueName='MyQueueName')
+
+# Send a message
+response = sqs.send_message(
+    QueueUrl=queue_url,
+    MessageBody='Hello World!'
 )
 
-response = table.get_item(
-    Key={
-        'my_key': 'my_value'
-    }
+# Receive a message
+response = sqs.receive_message(
+    QueueUrl=queue_url
 )
-item = response['Item']
-print(item)
+
+# Print out the message
+message = response['Messages'][0]
+print(message['Body'])
+
+# Delete the message
+sqs.delete_message(
+    QueueUrl=queue_url,
+    ReceiptHandle=message['ReceiptHandle']
+)

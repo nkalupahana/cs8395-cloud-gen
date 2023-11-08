@@ -28,33 +28,21 @@ response = table.get_item(
 )
 item = response['Item']
 print(item)
-#!/usr/bin/env python
-
-# import boto3 to access DynamoDB
 import boto3
 
-# create a DynamoDB resource
-dynamodb = boto3.resource('dynamodb')
+# Create an S3 client
+s3 = boto3.client('s3')
 
-# get the table called "myTable"
-table = dynamodb.Table('myTable')
+# Upload a file
+s3.upload_file(Filename='/path/to/myfile.txt', Bucket='my-bucket', Key='myfile.txt')
 
-# put an item in the table
-table.put_item(
-   Item={
-        'username': 'janedoe',
-        'first_name': 'Jane',
-        'last_name': 'Doe',
-        'age': 25,
-        'account_type': 'standard_user',
-    }
-)
+# List the contents of a bucket
+s3_list = s3.list_objects(Bucket='my-bucket')
+for object in s3_list['Contents']:
+    print(object['Key'])
 
-# get an item from the table
-response = table.get_item(
-    Key={
-        'username': 'janedoe',
-    }
-)
-item = response['Item']
-print(item)
+# Download a file
+s3.download_file(Filename='/path/to/downloaded/myfile.txt', Bucket='my-bucket', Key='myfile.txt')
+
+# Delete a file
+s3.delete_object(Bucket='my-bucket', Key='myfile.txt')

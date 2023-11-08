@@ -10,7 +10,7 @@ import sys
 
 llm = OpenAI(max_tokens=2048)
 # Test generation prompt
-infrafind_prompt = PromptTemplate.from_template("""Identify the AWS infrastructure that is being used in the following code. Be sure to include the name of the infrastructure in addition to the name of the service being used on the same line. Do not include local files, region information.
+infrafind_prompt = PromptTemplate.from_template("""Identify the AWS infrastructure that is being used in the following code. Be sure to include the name of the infrastructure in addition to the name of the service being used on the same line. Do not include local files or region information.
 
 Code:
 ```
@@ -38,8 +38,8 @@ for function in itertools.chain(glob.glob("scripts/*.py")):
         continue
 
     filename = function.replace("scripts/", "").replace(".py", "")
-    if os.path.isfile(f"scripts/{filename}.txt"):
-        print(f"Skipping {filename}, test already exists.")
+    if os.path.isfile(f"infra/{filename}.txt"):
+        print(f"Skipping {filename}, infra already exists.")
         continue
 
     # Get code and create prompt

@@ -1,0 +1,2 @@
+- DynamoDB table named myTable
+- SQS queue named my-queue

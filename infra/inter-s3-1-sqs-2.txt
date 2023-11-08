@@ -1,0 +1,2 @@
+- S3 bucket named my-bucket
+- SQS queue named MyQueueName

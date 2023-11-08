@@ -1,1 +1,1 @@
-table my_dyanmodb_table
+table my_dynamodb_table

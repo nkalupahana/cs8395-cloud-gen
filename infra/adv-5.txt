@@ -1,0 +1,3 @@
+- DynamoDB table named my_dynamodb_table
+- S3 bucket named my-new-bucket
+- SQS queue named my-sqs-queue.amazon.com
