@@ -9,7 +9,9 @@ import os.path
 import sys
 from tqdm import tqdm
 
-llm = OpenAI(max_tokens=2048)
+from llm_test_helpers import get_llm, get_args
+args = get_args(sys.argv)
+llm = get_llm(args.model)
 
 stack_prompt = PromptTemplate.from_template("""Create an AWS CDK Stack class in TypeScript named CdkStack that creates an AWS Lambda function named test_function. The file to be deployed for the Lambda is a local file called test.zip. Additionally, create the following resources:
 {resources}

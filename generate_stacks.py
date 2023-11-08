@@ -8,7 +8,10 @@ import json
 import os.path
 import sys
 
-llm = OpenAI(max_tokens=2048)
+from llm_test_helpers import get_llm, get_args
+args = get_args(sys.argv)
+llm = get_llm(args.model)
+
 # Test generation prompt
 stack_prompt = PromptTemplate.from_template("""Create an AWS CDK Stack class in TypeScript named CdkStack that creates the following resources:
 {code}

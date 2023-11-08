@@ -8,7 +8,10 @@ import json
 import os.path
 import sys
 
-llm = OpenAI(max_tokens=2048)
+from llm_test_helpers import get_llm, get_args
+args = get_args(sys.argv)
+llm = get_llm(args.model)
+
 # Test generation prompt
 infrafind_prompt = PromptTemplate.from_template("""Identify the AWS infrastructure that is being used in the following code. Be sure to include the name of the infrastructure in addition to the name of the service being used on the same line. Do not include local files or region information.
 
